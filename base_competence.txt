@@ -1,0 +1,182 @@
+HABOUBACAR TIDJANI BOUKARI
+Data Scientist (NLP, GenAI)                                                     
+
+
+Issu d'une classe préparatoire Maths-Physique et d'un cycle d'ingénieur en informatique, HTI s'est spécialisé en Intelligence Artificielle. Sa large expérience en  data analytics, genAI et l'automatisation des tests fonctionnels lui confère une solide méthodologie dans la résolution des problèmes complexes. Il dispose d'une bonne maîtrise en traitement de langage naturel (NLP) et la mise en place de chatbot basé sur la technologie RAG et LLM.
+
+
+
+EXPERTISE
+RAG et LLM 
+●●●●●
+Python & SQL
+●●●●●
+analyse de données 
+●●●●●
+
+
+
+
+gestion de projet 
+●●●●●
+machine learning 
+●●●●●
+science et recherche 
+●●●●●
+
+Synthèse des missions
+
+
+Caisse des dépôts et de Consignation • Data Engineer • depuis 03/2024 (3 mois)
+Club Data mc2i • Data Analyst • depuis 10/2022 (1 an et 8 mois)
+Ile-De-France Mobilités • Analytics Engineer • 11/2022 à 03/2024 (1 an et 5 mois)
+PwC France • Data Scientist • 09/2021 à 08/2022 (1 an)
+INRAE • Data Scientist • 04/2021 à 08/2021 (5 mois)
+
+Compétences
+TECHNIQUES : NLP, RAG, LLM,  analyse de données, reporting,, deep learning, machine learning, classification d'images, plan de test
+DOMAINES FONCTIONNELS : système d'information, transport, science et recherche, formation professionnelle
+MÉTHODOLOGIE DE GESTION DE PROJET : Agile Scrum
+OUTILS : Power BI, Alteryx, Elasticsearch, Git, Microsoft Azure DevOps, Postman, SoapUI
+LANGAGES DE DÉVELOPPEMENT : Python, SQL, Node.js
+BASES DE DONNÉES : MySQL, PostgreSQL, Redis
+PLATEFORMES : Google Cloud Platform, Microsoft Azure Databricks
+LANGUES : Anglais (Courant)
+
+Certifications
+Agile PSPO I • 07/2023
+
+Formations
+EISTI • Diplôme d'ingénieur en Intelligence Artificielle  • 03/2022 • 09/2022
+Lycée Moulay Idriss • Classes Préparatoires aux Grandes Ecoles  • 09/2017 • 07/2019
+Lycée d'Excellence • Baccalauréat Science Maths  • 09/2014 • 07/2017
+
+
+Détail des missions
+Caisse des dépôts et de Consignation • Data Engineer • depuis 03/2024 (3 mois) • Paris
+
+Mon Compte Formation (MCF) est la plateforme en ligne dédiée à la gestion et à l'utilisation des crédits de formation accumulés dans le cadre du Compte Personnel de Formation (CPF) et gérée par la Caisse des dépôts et de Consignation.
+Au sein de l'équipe Data Préparation de la direction des politiques sociales, HTI intervient en tant que data engineer afin de répondre aux différentes demandes des équipes métiers et des partenaires externes de la CDC en termes d'analyse de données et de reporting.
+
+Activités :
+Extraction depuis le Big data et fourniture des données CPF (Compte Professionnel de Formation) aux équipes métiers et aux partenaires externes de la CDC (Caisse des dépôts et de Consignation)
+Analyse de données et Reporting
+Mise en place de workflow Alteryx pour la fourniture régulière des données
+Analyse avancée de données textuelles avec des techniques de NLP et implémentation d'algorithmes d'IA (modèle type Camembert, Sentence-Bert...)
+Gestion de l'OpenData offre de formation de la CDC
+Remontée et suivi de tickets d'anomalies data auprès de l'équipe Big Data
+Domaine fonctionnel :
+Formation Professionnelle
+Environnements technologiques :
+Python, SQL, Spark, Natural Language Processing (NLP), Hive, Impala, HDFS, Alteryx, Tableau
+
+
+
+
+
+Ile-De-France Mobilités • Analytics Engineer • 11/2022 à 03/2024 (1 an et 5 mois) • Paris
+
+HTI est intervenu au sein de l’équipe IVTR (Informations Voyageurs Temps réel), agrégateur des données temps réel échangées entre les différents opérateurs de transport public en Ile-de-France, en tant qu'Analytics Engineer et Business Analyst. HTI a participé à la mise en place de l’implantation de la norme européenne SIRI, régissant les échanges des données voyageurs temps réel. 
+
+Activités :
+Analytics Engineer 
+Mise en place d’un outillage déployé sur azure permettant des tests data sur
+l’ensemble du back-office : 
+Mise en place d’un chatbot IA basé sur la technologie RAG et LLMs (gpt-3.5-turbo)
+Création d’un web App Flask de génération des flux de données
+Implémentation du simulateur producteur sous le protocole SOAP en node.js
+Déploiement de la solution sur Azure (App services, azure functions) et mise en place d'une CI/CD
+Implémentation d'un ETL sous python permettant d'extraire un flux de données de la prod et de le rejouer sur un environnement plus bas (recette, preprod...) afin d'améliorer la qualité de la recette fonctionnelle 
+Automatisation de tests de non régression, ce qui a permis de passer d'une recette manuelle de 5 jours à une recette automatisée de 3h, soit 90% de rendement 
+Création d'un dashboard Power BI de visualisation des données voyageurs en temps réel 
+Business Analyst 
+Expression de besoins applicatifs et suivi de projet BUILD
+Rédactions des spécifications fonctionnelles et tickets d'anomalies
+Animation des instances agiles
+Suivi du Build, tests de charge, recette et validation des tickets
+Suivi technique du Back Office du relais IVTR
+Conduite des tests de connexion de nouveaux partenaires au relais IVTR d'IDFM
+Rédaction des documentations et supports utilisateurs
+Accompagnement des développeurs sur l'implémentation de nouveaux formats d'échange de données temps réel (norme SIRI)
+Domaine fonctionnel :
+Transport
+Environnements technologiques :
+Python, Flask, SoapUI, Node.js, PostreSQL, ElasticSearch, Redis, Postman, Kibana, Azure Devops, Azure App services, Azure functions
+
+Compétences pratiquées : Microsoft Azure DevOps, Elasticsearch, Electron.js, Node.js, PostgreSQL, Postman, Python, Redis, SoapUI
+
+
+
+
+Club Data mc2i • Data Analyst • depuis 10/2022 (1 an et 8 mois) • Paris
+
+Ce chantier au sein du club data-IA en interne chez mc2i consiste à mettre en place un outil permettant d'auditer les systèmes d'IA des entreprises sous le prismes d'IA responsable, pour ensuite fournir des recommandations personnalisées basées sur les recommandations européennes.
+
+Activités :
+Création d'un questionnaire sous google form d'évaluation des pratiques d'une entreprise sous le prisme de l'Intelligence Artificielle responsable
+Création d'un dashboard permettant de visualiser le résultat de l'audit à travers des scores calculés par thématique
+Construction d'un ensemble de recommandations pour se conformer aux bonnes pratiques en terme d'éthique pour les systèmes d'IA
+Domaine fonctionnel :
+Transverse
+Environnements technologiques :
+App Script, Macro VBA, Google Data Studio
+
+
+
+
+PwC France • Data Scientist • 09/2021 à 08/2022 (1 an) • Paris
+
+Au sein de l’équipe RPA factory (Robotic Process Automation), HTI est intervenu en tant que data scientist et data analyst,sur le projet "Robot de Classification de Mails” qui a permis par la suite de développer une RPA intelligente.
+
+Activités
+Data scientist 
+MLOps : Déploiement de huits modèles de classification de mails sur Databricks avec MLFlow et mise en place d'une Data Pipeline pour du Continious Learning 
+Définition et mise en place d'une stratégie de mesure des KPIs des modèles en production  
+Création d'un dashboard Power BI de suivi des performances du modèle via les KPIs définis 
+Mise en concurrence des modèles de machine learning et BERT sur la tâche de classification : gain de 5% en performance sur le F1_score avec BERT 
+collecte des données
+preprocessing des données
+training et test
+Data Analyst 
+Projet de fin d'étude : étude bibliographique et mise en place d'un système automatisé (robot RPA) de recommandation qui aide les collaborateurs à limiter leur empreinte carbone en leur proposant régulièrement des fichiers à la suppression sous certains critères élaborés (clustering, détection d'anomalie, classification) : purge de 38% d'espace disque sur le Share Drive de l'équipe RPA à la première itération de test.
+Scrapping des données
+Nettoyage et Analyse
+Visualisation des données
+Livrables : liste de recommandations de fichiers
+Domaines fonctionnels :
+Data
+SI
+Environnements technologiques :
+Conda, API Rest, Azure Databricks, MLFLOW, Spark, Power BI, Scikit-learn, Tensorflow, BERT, Jira, Azure DevOps, MLOps
+
+Compétences pratiquées : API REST, data science, Microsoft Azure Databricks, Microsoft Power BI, Scikit-learn
+
+
+INRAE • Data Scientist • 04/2021 à 08/2021 (5 mois) • Montpellier
+
+Au sein de l'UMR (Unité Mixte de Recherche) AGAP (Amélioration Génétique des Plantes) de l'INRAE (Institut National de Recherche pour l'Agriculture l'alimentation et l'Environnement) HTI est intervenu au sein du projet de développement d’une application permettant aux agriculteurs de détecter plus facilement des colmatages dans leur systèmes d'irrigation, à travers une classification des images des arbres du verger prises par drone.
+
+Activités
+Implémentation d'un modèle de classification d'images infrarouges thermiques collectées par un drone afin de reconnaître les arbres en situation de déficit ou d'excès hydrique dans un verger de pommiers.  
+Acquisition d'images
+Traitement et nettoyage 
+Augmentation des données
+Training et validation
+Implémentation sous Flask d'une application permettant d'exposer le modèle entraîné et de fournir une cartographie des zones suspectes en fonction du résultat de la classification 
+Domaine fonctionnel :
+Recherche agronomique
+Environnements technologiques :
+Python, Conda, Connexion SSH, TensorFlow, Keras, Flask, HTML, JQuery, CSS, Geographiclib
+
+Compétences pratiquées : classification d'images, Flask, Keras
+
+
+
+
+
+
+
+
+
+
+
