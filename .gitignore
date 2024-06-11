@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 sentence-camembert-large/
-base_competence.txt
+/base_competence.txt
 .Python
 build/
 develop-eggs/
