@@ -208,7 +208,7 @@
             showLoading(); // Show loading animation and disable the send button
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/", true);
+            xhr.open("POST", "/chat", true);
             xhr.setRequestHeader("Content-Type", "application/json");
 
             xhr.onreadystatechange = function () {
@@ -261,16 +261,10 @@
         }
 
         function showLoading() {
-            // var responseElement = document.getElementById("spinner");
-            // if (responseElement) {
-            //   responseElement.innerHTML = '<div class="spinner"></div>';
-            // }
-
-            // Disable the send button
             var sendButton = document.querySelector("button[name='send']");
             if (sendButton) {
                 sendButton.disabled = true;
-                sendButton.innerHTML = '<div class="spinner"></div>'; // Optional: change button text
+                sendButton.innerHTML = '<div class="spinner-border  text-dark"></div>'; // Optional: change button text
             }
 
             var QueryElement = document.getElementById("id");
@@ -293,7 +287,7 @@
 
         setTimeout(function () {
             window.location.href = "{{ url_for('logout') }}";
-        }, 10000);
+        }, 600000);
     </script>
 </body>
 

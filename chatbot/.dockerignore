@@ -1,0 +1,17 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.csv
+*.tmp
+*.bak
+.DS_Store
+*.env
+node_modules
+dist
+build
+# Exclude large directories
+/flask_session/

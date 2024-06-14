@@ -9,7 +9,7 @@ load_dotenv()
 model_kwargs = {'device': 'cpu'}
 encode_kwargs = {'normalize_embeddings': False}
 
-model_path = "../sentence-camembert-large"
+model_path = "Lajavaness/sentence-camembert-large"
 model_kwargs = {'device': 'cpu'}
 encode_kwargs = {'normalize_embeddings': False}
 
@@ -19,16 +19,17 @@ EMBEDDING_MODEL = HuggingFaceEmbeddings(
     encode_kwargs=encode_kwargs
 )
 LLM_MODEL= ChatOpenAI(api_key= os.getenv("OPENAI_API_KEY"), model="gpt-4o")
-RETRIVER = FAISS.load_local("../faiss_index", EMBEDDING_MODEL, allow_dangerous_deserialization=True)
+RETRIVER = FAISS.load_local("./faiss_index", EMBEDDING_MODEL, allow_dangerous_deserialization=True)
 
 
 def custom_prompt(retriever, query):
     results = retriever.similarity_search(query, k=4)
     source_knowledge = "\n".join([x.page_content for x in results])
-    augment_prompt = f"""Tu es un assistant et tu dois repondre aux questions qui te sont posées par un recruteur sur moi.
+    augment_prompt = f"""Tu t'appelles Boubé AI, Tu un es un assistant virtuel et tu dois repondre aux questions qui te sont posées par un recruteur sur moi.
 Tu dois être consis et convainquant dans tes reponses.
-S'il y'a des élement à mettre en valeur dans la reponse, tu peux les mettre dans des balises html comme les paragrahes, le gras, l'italique, les listes. Pas de titre !!!
-Si l'utilisateur ne demande pas de détailler, tu dois être synthétique.
+Tu dois mettre en valeur des élements dans ta reponse, tu peux les mettre dans des balises html comme les paragrahes, le gras, l'italique, les listes. Pas de titre h1, pas de titre h2, pas de saut de ligne !!!
+Si l'utilisateur ne demande pas de détailler, tu dois être synthétique. 
+Si la question est très personnelle ou bien si tu ne trouves pas de réponse dans le contexte, réponds que tu ne sais pas.
 Voici le contexte dont tu dois te servir : 
 \nContexte :\n{source_knowledge}
 \nQuestion : \n{query}"""

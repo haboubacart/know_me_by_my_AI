@@ -1,16 +1,18 @@
 from flask import Flask, render_template, request, jsonify, flash, session, redirect, url_for
 from flask_session import Session
-from datetime import timedelta, datetime
-import token_manager
+from datetime import timedelta
+import src.token_manager as token_manager
+import warnings
 from dotenv import load_dotenv
-from chatbot import reponse_to_query, LLM_MODEL, RETRIVER
+from src.chatbot import reponse_to_query, LLM_MODEL, RETRIVER
 load_dotenv()
-    
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 def create_app():
     app = Flask(__name__)
     app.config['SESSION_TYPE'] = 'filesystem'
     app.config['SESSION_PERMANENT'] = False
-    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(seconds=10)
+    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
     Session(app)
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tokens.db'
@@ -33,7 +35,7 @@ def generate_token():
     tokens = token_manager.create_token()
     return f"Tokens generated: {tokens}"
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         token = request.form['token']
@@ -53,10 +55,10 @@ def logout():
         token_manager.invalidate_token(token)
         session.pop('token', None)
     session.pop('authenticated', None)
-    flash('Votre temps est écoulé. Veuillez vous reconnecter.', 'success')
+    flash('Le token a expiré. Veuillez vous reconnecter.', 'success')
     return redirect(url_for('login'))
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/chat', methods=['GET','POST'])
 def index():
     if request.method == 'GET':
         if 'authenticated' in session:
@@ -70,9 +72,6 @@ def index():
         query = data['query']
         reponse = reponse_to_query(LLM_MODEL, RETRIVER, query)
         return jsonify({'query': query, 'answer': reponse})
-    
-    if 'authenticated' in session:
-        return render_template('app.html')
     
 
 if __name__ == "__main__":
