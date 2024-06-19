@@ -1,5 +1,5 @@
 ## Description du Projet
-Ce projet est un assistant virtuel intelligent conçu pour répondre aux questions des recruteurs sur le profil d'une personne. I est développé à l'aide d'un **RAG implémenté sur un le portfolio ou CV détaillé**. L'objectif est qu'il fournisse des réponses détaillées, convaincantes et personnalisées en mettant en valeur les éléments clés de son parcours professionnel, ses compétences et ses réalisations. Le projet utilise Flask pour le backend, GPT-4o pour le traitement du langage naturel avancé, et FAISS pour la recherche et l'indexation efficace des informations.
+Ce projet est un assistant virtuel intelligent conçu pour répondre aux questions des recruteurs sur le profil d'une personne. Il est développé à l'aide d'un **RAG implémenté sur un le portfolio ou CV détaillé, servant de base contextuelle**. L'objectif est qu'il fournisse des réponses détaillées, convaincantes et personnalisées en mettant en valeur les éléments clés de son parcours professionnel, ses compétences et ses réalisations. Le projet utilise Flask pour le backend, GPT-4o pour le traitement du langage naturel avancé, et FAISS pour la recherche et l'indexation efficace des informations.
 
 ## Technologies Utilisées
 - **Flask :** Framework web utilisé pour développer l'application backend de Boubé AI.
