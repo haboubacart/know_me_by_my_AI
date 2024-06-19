@@ -26,7 +26,7 @@ Pour lancer l'application (avec Docker) :
     pip install -r chatbot/requirements.txt
     ```
 
-2. Entraînez le vectorestore : assurez-vous d'avoir un fichier base de compétence (`base_cometence.txt` ou `base_competence.md`), votre fichier CV détaillé ou portfolio en format texte ou markdown.
+2. Entraînez le vectorestore : assurez-vous d'avoir un fichier base de compétence (`base_cometence.txt` ou `base_competence.md`) à la racine du projet, représentant votre CV détaillé ou portfolio en format texte ou markdown.
 
 3. Lancez la commande suivante pour générer puis exécuter l'image de l'application qui démarre sur la page de connexion :
     ```sh
