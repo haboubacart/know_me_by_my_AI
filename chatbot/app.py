@@ -54,7 +54,7 @@ app = create_app()
 @app.route('/generate_token', methods=['GET'])
 def generate_token():
     tokens = token_manager.create_token()
-    return f"Tokens generated: {tokens}"
+    return f"Token generated: {tokens}"
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
