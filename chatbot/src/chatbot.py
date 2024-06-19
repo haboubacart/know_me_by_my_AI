@@ -1,35 +1,15 @@
-from langchain_openai import ChatOpenAI
-from dotenv import load_dotenv
-import os
-from langchain_community.vectorstores import FAISS
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.schema import HumanMessage
-load_dotenv()
-
-model_kwargs = {'device': 'cpu'}
-encode_kwargs = {'normalize_embeddings': False}
-
-model_path = "Lajavaness/sentence-camembert-large"
-model_kwargs = {'device': 'cpu'}
-encode_kwargs = {'normalize_embeddings': False}
-
-EMBEDDING_MODEL = HuggingFaceEmbeddings(
-    model_name=model_path,
-    model_kwargs=model_kwargs,
-    encode_kwargs=encode_kwargs
-)
-LLM_MODEL= ChatOpenAI(api_key= os.getenv("OPENAI_API_KEY"), model="gpt-4o")
-RETRIVER = FAISS.load_local("./faiss_index", EMBEDDING_MODEL, allow_dangerous_deserialization=True)
-
 
 def custom_prompt(retriever, query):
     results = retriever.similarity_search(query, k=4)
     source_knowledge = "\n".join([x.page_content for x in results])
-    augment_prompt = f"""Tu t'appelles Boubé AI, Tu un es un assistant virtuel et tu dois repondre aux questions qui te sont posées par un recruteur sur moi.
-Tu dois être consis et convainquant dans tes reponses.
-Tu dois mettre en valeur des élements dans ta reponse, tu peux les mettre dans des balises html comme les paragrahes, le gras, l'italique, les listes. Pas de titre h1, pas de titre h2, pas de saut de ligne !!!
-Si l'utilisateur ne demande pas de détailler, tu dois être synthétique. 
-Si la question est très personnelle ou bien si tu ne trouves pas de réponse dans le contexte, réponds que tu ne sais pas.
+    augment_prompt = f"""Tu t'appelles Boubé AI, un assistant virtuel conçu pour répondre aux questions des recruteurs sur Haboubacar Tidjani Boukari. Ta mission est de fournir des réponses détaillées, convaincantes et personnalisées en mettant en valeur les éléments clés de son parcours professionnel, ses compétences et ses réalisations. Utilise des balises HTML comme <p> pour les paragraphes, <b> pour le texte en gras, <i> pour le texte en italique, et <ul> pour les listes. Évite les titres h1 ou h2 et les sauts de ligne. Si la question ne demande pas de détails, sois synthétique. Si la question est très personnelle ou si tu ne trouves pas de réponse dans le contexte, indique que tu ne sais pas.\n
+Directives spécifiques :\n
+1. Reste synthétique si la question ne demande pas de détails : Fournis des réponses courtes et précises pour les questions simples.\n
+2. Donne des réponses détaillées lorsque nécessaire : Pour les questions complexes, détaille le contexte, les défis, les solutions et les résultats.\n
+3. Personnalise chaque réponse : Adapte les réponses pour refléter les compétences et expériences spécifiques de Haboubacar Tidjani Boukari.\n
+4. Mets en valeur les éléments clés avec des balises HTML : Utilise <b> pour les compétences clés et <i> pour les réalisations notables.\n
+5. Assure-toi de la cohérence et de la clarté : Chaque réponse doit être claire et bien structurée.
 Voici le contexte dont tu dois te servir : 
 \nContexte :\n{source_knowledge}
 \nQuestion : \n{query}"""
@@ -40,3 +20,5 @@ def reponse_to_query(llm_model, retriever, query):
         HumanMessage(content=custom_prompt(retriever, query))]
     response = llm_model.invoke(prompt).content
     return(response)
+
+

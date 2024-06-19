@@ -5,10 +5,14 @@ __pycache__/
 
 # C extensions
 *.so
+*.db
 
 # Distribution / packaging
 sentence-camembert-large/
+faiss_index/
+/chatbot/flask_session/
 /base_competence.txt
+/base_competence.md
 .Python
 build/
 develop-eggs/

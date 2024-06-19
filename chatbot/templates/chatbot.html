@@ -138,11 +138,6 @@
 <body>
     <div class="container">
         <div class="card">
-            <!-- <div class="card-header text-center">
-        <img src="{{ url_for('static', filename='2560px-IdFMobilités.svg.png') }}" class="mx-auto d-block"
-          style="height: 80px; margin: 10px" />
-        <h4>Interface de Test API GenAI pour Data Supermarket</h4>
-      </div> -->
 
             <div class="card-header d-flex" style="background-color: #A29C9B;">
                 <h1 class="m-auto" style="color: #000000;">Posez-moi vos questions sur Haboubacar 🙂</h1>
@@ -196,83 +191,92 @@
                     document.querySelector("button[name='send']").click();
                 }
             });
-
+    
         function sendQuery(event) {
             event.preventDefault(); // Prevent the default form submission
-
+    
             var sendButton = document.querySelector("button[name='send']");
             var queryTextarea = document.getElementById("query");
             var query = queryTextarea.value;
-            var responseElement = document.getElementById("spinner");
-
+            var responseElement = document.getElementById("response");
+            var spinnerElement = document.getElementById("spinner");
+            queryTextarea.value = ""; 
+    
+            // Show the user's query immediately
+            var userMessage =
+                "<div class='d-flex'> <div class='message human'>" +
+                escapeHTML(query) +
+                "</div><img src=\"{{ url_for('static', filename='images/me.png') }}\" \
+            style=\"width: 48px;height:48px\";  /></div>";
+            responseElement.innerHTML += userMessage;
+            scrollToBottom()
+    
             showLoading(); // Show loading animation and disable the send button
-
+    
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/chat", true);
             xhr.setRequestHeader("Content-Type", "application/json");
-
+    
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     // If you receive any response (not only 200 OK), hide the spinner
-
+    
                     if (xhr.status === 200) {
                         var response = JSON.parse(xhr.responseText);
                         updateChat(response);
                     } else {
                         // Handle error (show error message or similar)
-                        // responseElement.innerHTML = "Error processing your request.";
-                        queryTextarea.value = "Error processing your request.";
+                        var errorMessage =
+                            "<div class='d-flex'><div class='message bot'>" +
+                            "Error processing your request." +
+                            "</div></div>";
+                        responseElement.innerHTML += errorMessage;
                     }
-
+    
                     // Revert send button state and clear the query textarea
                     sendButton.disabled = false;
                     sendButton.textContent = "Envoyer";
-                    queryTextarea.value = ""; // Optionally clear the query textarea
-                    responseElement.innerHTML = "";
+                    spinnerElement.innerHTML = "";
                 }
             };
-
+    
             xhr.send(JSON.stringify({ query: query }));
+            
         }
-
+    
         function updateChat(response) {
             var responseElement = document.getElementById("response");
             var newMessage =
-                "<div class='d-flex'> <div class='message human'>" +
-                escapeHTML(response.query) +
-                "</div><img src=\"{{ url_for('static', filename='images/me.png') }}\" \
-            style=\"width: 48px;height:48px\" /></div>";
-            newMessage +=
-                "<div class='d-flex'><img src=\"{{ url_for('static', filename='images/ai.png') }}\" \
-            style=\"width: 60px;height:60px;\" /><div class='message bot'>" +
-                response.answer + // Ici, `response.answer` est traité comme du HTML sûr
+                "<div class='d-flex' ><img src=\"{{ url_for('static', filename='images/ai.png') }}\" \
+            style=\"width: 60px;height:60px;\" /><div class='message bot' style=\"background-color:#EDEEE2\";>" +
+                response.answer + // `response.answer` is treated as safe HTML
                 "</div> </div>";
             responseElement.innerHTML += newMessage;
-
-            var scrollElement = document.getElementById("scroll");
-            scrollElement.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
+            scrollToBottom()
+    
         }
-
-        function scrollToBottom(element) {
-            element.scrollTop = element.scrollHeight;
-        }
-
+    
+        function scrollToBottom() {
+        var scrollElement = document.getElementById("scroll");
+        scrollElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    }
+    
         function showLoading() {
             var sendButton = document.querySelector("button[name='send']");
             if (sendButton) {
                 sendButton.disabled = true;
                 sendButton.innerHTML = '<div class="spinner-border  text-dark"></div>'; // Optional: change button text
             }
-
+    
             var QueryElement = document.getElementById("id");
             if (QueryElement) {
                 QueryElement.value = "";
             }
         }
-
+    
         function escapeHTML(str) {
             return str.replace(/[&<>'"]/g, function (tag) {
                 return ({
@@ -283,12 +287,13 @@
                     '"': '&quot;'
                 })[tag] || tag;
             });
-        };
-
+        }
+    
         setTimeout(function () {
             window.location.href = "{{ url_for('logout') }}";
         }, 600000);
     </script>
+    
 </body>
 
 </html>

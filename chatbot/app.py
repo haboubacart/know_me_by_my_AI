@@ -2,11 +2,32 @@ from flask import Flask, render_template, request, jsonify, flash, session, redi
 from flask_session import Session
 from datetime import timedelta
 import src.token_manager as token_manager
+from src.chatbot import reponse_to_query
 import warnings
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-from src.chatbot import reponse_to_query, LLM_MODEL, RETRIVER
+import os
+from langchain_community.vectorstores import FAISS
 load_dotenv()
 warnings.simplefilter(action='ignore', category=FutureWarning)
+
+load_dotenv()
+
+model_kwargs = {'device': 'cpu'}
+encode_kwargs = {'normalize_embeddings': False}
+
+model_path = "Lajavaness/sentence-camembert-large"
+model_kwargs = {'device': 'cpu'}
+encode_kwargs = {'normalize_embeddings': False}
+
+EMBEDDING_MODEL = HuggingFaceEmbeddings(
+    model_name=model_path,
+    model_kwargs=model_kwargs,
+    encode_kwargs=encode_kwargs
+)
+LLM_MODEL= ChatOpenAI(api_key= os.getenv("OPENAI_API_KEY"), model="gpt-4o")
+RETRIVER = FAISS.load_local("./faiss_index", EMBEDDING_MODEL, allow_dangerous_deserialization=True)
 
 def create_app():
     app = Flask(__name__)
