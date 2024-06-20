@@ -51,7 +51,7 @@ def create_tables():
 app = create_app()
 
 
-@app.route('/generate_token', methods=['GET'])
+@app.route('/token', methods=['GET'])
 def generate_token():
     tokens = token_manager.create_token()
     return f"Token generated: {tokens}"

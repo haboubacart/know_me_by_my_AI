@@ -36,7 +36,7 @@ Pour lancer l'application (avec Docker) :
 
 4. Accédez à l'adresse suivante pour générer le token de connexion :
     ```
-    http://127.0.0.1:8080/generate_token
+    http://127.0.0.1:8080/token
     ```
 
 5. Renseignez le token généré sur la page d'authentification :
