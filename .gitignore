@@ -12,6 +12,7 @@ sentence-camembert-large/
 faiss_index/
 /chatbot/flask_session/
 /base_competence.txt
+/post.txt
 /base_competence.md
 .Python
 build/

@@ -44,3 +44,6 @@ Pour lancer l'application (avec Docker) :
     http://127.0.0.1:8080/
     ```
    Note : La session (token) expire au bout de 10 minutes après authentification.
+
+## Exemple de Chat
+   ![Description de l'image](chatbot/static/images/exemple_chat.jpeg)

@@ -1,9 +1,7 @@
 version: '3'
 services:
   web:
-    build:
-      context: .
+    image: chatbot:latest
+    build: .
     ports:
       - "8080:8080"
-    env_file:
-      - .env
